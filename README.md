@@ -65,9 +65,6 @@ Increase dataset size and diversity
 Develop post-processing for entity span consolidation
 Address class imbalance and introduce more granular entity types
 
-## Contributing
-Contributions to improve the model or expand its capabilities are welcome. Please feel free to submit pull requests or open issues for discussion.
-
 ## Acknowledgements
 Hugging Face Transformers library
 BERT model developers

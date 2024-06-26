@@ -48,12 +48,14 @@ model = AutoModelForTokenClassification.from_pretrained("path/to/saved/model")
 tokenizer = AutoTokenizer.from_pretrained("path/to/saved/model")
 ```
 2. Perform inference on new text:
+```python
   text = "Your scientific text here"
   inputs = tokenizer(text, return_tensors="pt")
   with torch.no_grad():
       logits = model(**inputs).logits
   predictions = torch.argmax(logits, dim=2)
   predicted_token_class = [model.config.id2label[t.item()] for t in predictions[0]]
+```
 Model Performance
 
 Training time: 211.5674 seconds

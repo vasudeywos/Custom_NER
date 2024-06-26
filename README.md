@@ -45,7 +45,8 @@ To use the trained model for inference:
 from transformers import AutoModelForTokenClassification, AutoTokenizer
 
 model = AutoModelForTokenClassification.from_pretrained("path/to/saved/model")
-tokenizer = AutoTokenizer.from_pretrained("path/to/saved/model")```
+tokenizer = AutoTokenizer.from_pretrained("path/to/saved/model")
+```
 2. Perform inference on new text:
   text = "Your scientific text here"
   inputs = tokenizer(text, return_tensors="pt")

@@ -20,13 +20,6 @@ This project implements a custom Named Entity Recognition (NER) model using BERT
 - Potential for expanding to other relevant entities
 - Fine-tuned BERT model for improved performance on domain-specific text
 
-## Installation
-
-1. Clone this repository:
-   git clone https://github.com/your-username/Custom_NER.git
-   cd Custom_NER
-2. Install the required dependencies:
-   pip install -r requirements.txt
 ## Usage
 
 ### Training the Model

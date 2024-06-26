@@ -23,3 +23,61 @@ This project implements a custom Named Entity Recognition (NER) model using BERT
 ## Installation
 
 1. Clone this repository:
+   git clone https://github.com/your-username/Custom_NER.git
+   cd Custom_NER
+2. Install the required dependencies:
+   pip install -r requirements.txt
+## Usage
+
+### Training the Model
+
+To train the model on your own dataset:
+
+1. Prepare your data in the JSONL format (see `dataset.jsonl` for an example).
+2. Run the training script:
+   python train_ner_model.py
+### Inference
+
+To use the trained model for inference:
+
+1. Load the model:
+```python
+from transformers import AutoModelForTokenClassification, AutoTokenizer
+
+model = AutoModelForTokenClassification.from_pretrained("path/to/saved/model")
+tokenizer = AutoTokenizer.from_pretrained("path/to/saved/model")
+2. Perform inference on new text:
+  text = "Your scientific text here"
+  inputs = tokenizer(text, return_tensors="pt")
+  with torch.no_grad():
+      logits = model(**inputs).logits
+  predictions = torch.argmax(logits, dim=2)
+  predicted_token_class = [model.config.id2label[t.item()] for t in predictions[0]]
+Model Performance
+
+Training time: 211.5674 seconds
+Training samples per second: 7.156
+Training steps per second: 0.454
+Final training loss: 0.12777168552088079
+Validation Loss: Epoch 1 - 0.051182, Epoch 2 - 0.036526
+
+Future Work
+
+Implement cross-validation for more robust model evaluation
+Experiment with domain-specific pre-trained models (e.g., SciBERT)
+Increase dataset size and diversity
+Develop post-processing for entity span consolidation
+Address class imbalance and introduce more granular entity types
+
+Contributing
+Contributions to improve the model or expand its capabilities are welcome. Please feel free to submit pull requests or open issues for discussion.
+License
+This project is licensed under the MIT License.
+Acknowledgements
+
+Hugging Face Transformers library
+BERT model developers
+Contributors to the scientific text dataset used for training
+
+
+

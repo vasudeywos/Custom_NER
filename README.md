@@ -56,7 +56,7 @@ tokenizer = AutoTokenizer.from_pretrained("path/to/saved/model")
   predictions = torch.argmax(logits, dim=2)
   predicted_token_class = [model.config.id2label[t.item()] for t in predictions[0]]
 ```
-Model Performance
+###Model Performance
 
 Training time: 211.5674 seconds
 Training samples per second: 7.156
@@ -64,7 +64,7 @@ Training steps per second: 0.454
 Final training loss: 0.12777168552088079
 Validation Loss: Epoch 1 - 0.051182, Epoch 2 - 0.036526
 
-Future Work
+###Future Work
 
 Implement cross-validation for more robust model evaluation
 Experiment with domain-specific pre-trained models (e.g., SciBERT)
@@ -72,12 +72,10 @@ Increase dataset size and diversity
 Develop post-processing for entity span consolidation
 Address class imbalance and introduce more granular entity types
 
-Contributing
+###Contributing
 Contributions to improve the model or expand its capabilities are welcome. Please feel free to submit pull requests or open issues for discussion.
-License
-This project is licensed under the MIT License.
-Acknowledgements
 
+###Acknowledgements
 Hugging Face Transformers library
 BERT model developers
 Contributors to the scientific text dataset used for training

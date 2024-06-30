@@ -60,7 +60,7 @@ Validation Loss: Epoch 1 - 0.051182, Epoch 2 - 0.036526
 ## Future Work
 
 Implement cross-validation for more robust model evaluation
-Experiment with domain-specific pre-trained models (e.g., DilBERT)
+Experiment with domain-specific pre-trained models (e.g., DistilBERT)
 Increase dataset size and diversity
 Develop post-processing for entity span consolidation
 Address class imbalance and introduce more granular entity types
